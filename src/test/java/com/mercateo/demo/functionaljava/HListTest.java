@@ -1,7 +1,6 @@
 package com.mercateo.demo.functionaljava;
 
 import fj.data.hlist.HList;
-import lombok.val;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
