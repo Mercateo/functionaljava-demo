@@ -1,9 +1,6 @@
 package com.mercateo.demo.functionaljava;
 
-import fj.Ord;
 import fj.data.Array;
-import fj.data.HashSet;
-import fj.data.Set;
 import fj.function.Integers;
 import org.junit.Test;
 
@@ -11,11 +8,17 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ArrayTest {
+
+    @Test
+    public void testMutability() {
+        final Array<Integer> array = Array.range(0, 3);
+        array.set(0, 1);
+        assertThat(array).containsExactly(1, 1, 2);
+    }
 
     @Test
     public void testInterfacingToNativeType() {
