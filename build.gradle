@@ -8,6 +8,7 @@ version = 1.0
 
 dependencies {
     compile group: 'org.functionaljava', name: 'functionaljava-java8', version: '4.+'
+    compile group: 'com.javaslang', name: 'javaslang', version: '2.0.0-beta'
     compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.+'
     compile group: 'org.projectlombok', name: 'lombok', version: '+'
     testCompile group: 'junit', name: 'junit', version: '4.+'
