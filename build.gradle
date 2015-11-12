@@ -9,6 +9,7 @@ version = 1.0
 dependencies {
     compile group: 'org.functionaljava', name: 'functionaljava-java8', version: '4.+'
     compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.+'
+    compile group: 'org.projectlombok', name: 'lombok', version: '+'
     testCompile group: 'junit', name: 'junit', version: '4.+'
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.+'
 }
