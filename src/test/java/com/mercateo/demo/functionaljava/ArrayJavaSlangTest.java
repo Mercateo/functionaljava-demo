@@ -14,11 +14,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ArrayJavaSlangTest {
 
     @Test
-    public void testMutability() {
+    public void testMutabilityIsNotGiven() {
         final Array<Integer> array = Array.range(0, 3);
         array.removeAt(1);
         array.insert(1, 1);
-        assertThat(array).containsExactly(1, 1, 2);
+        assertThat(array).containsExactly(0, 1, 2);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class ArrayJavaSlangTest {
         assertThat(Array.ofAll(integerList)).containsExactly(0, 1, 2);
 
         final Integer[] integerArray = {0, 1, 2};
-        assertThat(Array.of(integerArray)).containsExactly(0, 1, 2);
+        assertThat(Array.ofAll(integerArray)).containsExactly(0, 1, 2);
     }
 
     @Test
