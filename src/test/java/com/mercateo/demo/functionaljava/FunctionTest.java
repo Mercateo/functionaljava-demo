@@ -20,7 +20,7 @@ public class FunctionTest {
         assertThat(hash.apply(test)).isEqualTo(hashCode);
 
         final Function<Object, Integer> hashCache = Function1.of(Object::hashCode).memoized();
- dd       assertThat(hashCache.apply(test)).isEqualTo(hashCode);
+        assertThat(hashCache.apply(test)).isEqualTo(hashCode);
     }
 
     @Test
