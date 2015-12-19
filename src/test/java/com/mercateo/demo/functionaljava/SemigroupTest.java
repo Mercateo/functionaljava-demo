@@ -3,8 +3,6 @@ package com.mercateo.demo.functionaljava;
 import fj.*;
 import fj.data.Array;
 import fj.data.Set;
-import fj.data.Validation;
-import lombok.val;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -17,7 +15,7 @@ public class SemigroupTest {
 
     @Test
     public void testSemigroup() {
-        val sum = Semigroup.bigdecimalAdditionSemigroup.sum(new BigDecimal("10.1"), new BigDecimal("5.2"));
+        final BigDecimal sum = Semigroup.bigdecimalAdditionSemigroup.sum(new BigDecimal("10.1"), new BigDecimal("5.2"));
         assertThat(sum).isEqualTo("15.3");
     }
 
@@ -32,18 +30,18 @@ public class SemigroupTest {
 
     @Test
     public void testSemigroupApply() {
-        val multiplyBy = Semigroup.bigdecimalMultiplicationSemigroup.sum(new BigDecimal("2.5"));
+        final F<BigDecimal, BigDecimal> multiplyBy = Semigroup.bigdecimalMultiplicationSemigroup.sum(new BigDecimal("2.5"));
 
-        val map = Array.array(new BigDecimal("2.0"), new BigDecimal("4.0")).map(multiplyBy);
+        final Array<BigDecimal> map = Array.array(new BigDecimal("2.0"), new BigDecimal("4.0")).map(multiplyBy);
         assertThat(map).containsExactly(new BigDecimal("5.00"), new BigDecimal("10.00"));
     }
 
     @Test
     public void testMapSemigroup() {
-        val semigroup = Semigroup.semigroup(new F2<Map<Integer, Integer>, Map<Integer, Integer>, Map<Integer, Integer>>() {
+        final Semigroup<Map<Integer, Integer>> semigroup = Semigroup.semigroup(new F2<Map<Integer, Integer>, Map<Integer, Integer>, Map<Integer, Integer>>() {
             @Override
             public Map<Integer, Integer> f(Map<Integer, Integer> leftMap, Map<Integer, Integer> rightMap) {
-                val keys = Set.iterableSet(Ord.intOrd, leftMap.keySet()).union(Set.iterableSet(Ord.intOrd, rightMap.keySet()));
+                final Set<Integer> keys = Set.iterableSet(Ord.intOrd, leftMap.keySet()).union(Set.iterableSet(Ord.intOrd, rightMap.keySet()));
                 return fj.data.HashMap.from(keys.map(Ord.p2Ord(Ord.intOrd, Ord.intOrd), k -> new P2<Integer, Integer>() {
                     @Override
                     public Integer _1() {

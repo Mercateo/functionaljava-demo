@@ -44,7 +44,7 @@ public class ArrayJavaSlangTest {
         assertThat(Array.ofAll(integerList)).containsExactly(0, 1, 2);
 
         final Integer[] integerArray = {0, 1, 2};
-        assertThat(Array.ofAll(integerArray)).containsExactly(0, 1, 2);
+        assertThat(Array.of(integerArray)).containsExactly(0, 1, 2);
     }
 
     @Test

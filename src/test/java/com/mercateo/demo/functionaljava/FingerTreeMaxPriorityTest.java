@@ -5,8 +5,6 @@ import fj.data.fingertrees.FingerTree;
 import fj.data.fingertrees.MakeTree;
 import fj.data.fingertrees.Measured;
 import fj.data.fingertrees.One;
-import lombok.Data;
-import lombok.val;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,12 +16,6 @@ public class FingerTreeMaxPriorityTest {
 
     private FingerTree<Integer, Task> tree;
     private MakeTree<Integer, Task> mk;
-
-    @Data
-    public static class Task {
-        private final String name;
-        private final Integer priority;
-    }
 
     @Before
     public void setUp() {
@@ -49,7 +41,7 @@ public class FingerTreeMaxPriorityTest {
 
     @Test
     public void testTree() {
-        val updatedTree = createBaseTree();
+        final FingerTree<Integer, Task> updatedTree = createBaseTree();
 
         assertThat(updatedTree.measure()).isEqualTo(10);
         assertThat(updatedTree.isEmpty()).isFalse();
@@ -76,7 +68,7 @@ public class FingerTreeMaxPriorityTest {
 
     @Test
     public void testTreeAddHigherPriority() {
-        val updatedTree = createBaseTree().cons(new Task("high", 20));
+        final FingerTree<Integer, Task> updatedTree = createBaseTree().cons(new Task("high", 20));
 
         assertThat(updatedTree.measure()).isEqualTo(20);
         assertThat(updatedTree.isEmpty()).isFalse();

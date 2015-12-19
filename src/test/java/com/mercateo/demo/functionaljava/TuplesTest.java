@@ -2,7 +2,6 @@ package com.mercateo.demo.functionaljava;
 
 import javaslang.Tuple;
 import javaslang.Tuple4;
-import lombok.val;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
