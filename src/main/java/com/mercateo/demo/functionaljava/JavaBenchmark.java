@@ -7,12 +7,20 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class JavaBenchmark {
 
     @Benchmark
     public static void filterPositiveNumbers(BenchmarkData data) {
         final List<Integer> list = data.getArrayList();
         list.stream().filter(x -> x > 5).collect(Collectors.toList());
+    }
+
+    @Benchmark
+    public static void processNumbers(BenchmarkData data) {
+        final List<Integer> array = data.getArrayList();
+
+        final Long result = array.stream().map(Long::new).reduce(0L, (sum, value) -> sum + value);
     }
 
     @Benchmark
