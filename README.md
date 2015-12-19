@@ -22,6 +22,7 @@ This project should be a playground for the evaluation of functional extensions 
 
 Versions:
 
+|      |         |
 | ---- | ------- |
 | Java | 1.8u60 |
 | FJ | 4.4.1 |
