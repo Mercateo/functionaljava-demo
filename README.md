@@ -13,23 +13,32 @@ Versions:
 
 ```
 Benchmark                                       Mode  Cnt       Score        Error  Units
-FunctionalJavaBenchmark.arrayAppend            thrpt    5  554453,890 ± 56690,973  ops/s
-FunctionalJavaBenchmark.arrayAppendSingle      thrpt    5     762,641 ±    56,308  ops/s
-FunctionalJavaBenchmark.filterPositiveNumbers  thrpt    5   40126,195 ±  1566,632  ops/s
-FunctionalJavaBenchmark.listAppend             thrpt    5   76799,817 ±  5357,152  ops/s
-FunctionalJavaBenchmark.listAppendSingle       thrpt    5      92,816 ±     4,123  ops/s
-FunctionalJavaBenchmark.processNumbers         thrpt    5   58909,160 ±  3838,681  ops/s
-JavaBenchmark.arrayAppend                      thrpt    5  278863,733 ± 52994,403  ops/s
-JavaBenchmark.arrayAppendSingle                thrpt    5   52417,998 ± 13122,875  ops/s
-JavaBenchmark.filterPositiveNumbers            thrpt    5   51158,292 ± 24743,647  ops/s
-JavaBenchmark.listAppend                       thrpt    5   31811,319 ±  5363,774  ops/s
-JavaBenchmark.listAppendSingle                 thrpt    5   31140,066 ±  1789,211  ops/s
-JavaBenchmark.processNumbers                   thrpt    5   48216,384 ± 10537,142  ops/s
-JavaSlangBenchmark.arrayAppend                 thrpt    5   58449,697 ± 32159,478  ops/s
-JavaSlangBenchmark.arrayAppendSingle           thrpt    5     729,489 ±    61,404  ops/s
-JavaSlangBenchmark.filterPositiveNumbers       thrpt    5   77471,631 ± 36949,531  ops/s
-JavaSlangBenchmark.listAppend                  thrpt    5    8948,195 ±  4415,039  ops/s
-JavaSlangBenchmark.listAppendSingle            thrpt    5       5,331 ±     3,921  ops/s
-JavaSlangBenchmark.processNumbers              thrpt    5   36780,243 ± 26846,206  ops/s
+Benchmark                                            Mode  Cnt       Score        Error  Units
+FunctionalJavaBenchmark.arrayAppend                 thrpt    5  987160,536 ±  58784,290  ops/s
+FunctionalJavaBenchmark.arrayAppendImmutableSingle  thrpt    5     979,910 ±    392,312  ops/s
+FunctionalJavaBenchmark.filterPositiveNumbers       thrpt    5   78631,816 ±  13786,520  ops/s
+FunctionalJavaBenchmark.listAppend                  thrpt    5  103330,683 ±   6921,463  ops/s
+FunctionalJavaBenchmark.listAppendImmutableSingle   thrpt    5     108,068 ±     12,464  ops/s
+FunctionalJavaBenchmark.processNumbers              thrpt    5   83480,357 ±  26036,522  ops/s
+JavaBenchmark.arrayAppend                           thrpt    5  375719,963 ± 141259,857  ops/s
+JavaBenchmark.arrayAppendSingle                     thrpt    5   89235,228 ±  14272,456  ops/s
+JavaBenchmark.filterPositiveNumbers                 thrpt    5  137167,303 ±  18690,496  ops/s
+JavaBenchmark.listAppend                            thrpt    5   52493,223 ±  15582,388  ops/s
+JavaBenchmark.listAppendSingle                      thrpt    5   50883,533 ±   3122,168  ops/s
+JavaBenchmark.processNumbers                        thrpt    5  100866,487 ±  28959,954  ops/s
+JavaSlangBenchmark.arrayAppend                      thrpt    5   85211,570 ±   6451,883  ops/s
+JavaSlangBenchmark.arrayAppendImmutableSingle       thrpt    5     849,207 ±     56,130  ops/s
+JavaSlangBenchmark.filterPositiveNumbers            thrpt    5  177783,391 ±  29507,543  ops/s
+JavaSlangBenchmark.listAppend                       thrpt    5   12254,070 ±    560,995  ops/s
+JavaSlangBenchmark.listAppendImmutableSingle        thrpt    5       7,997 ±      0,235  ops/s
+JavaSlangBenchmark.processNumbers                   thrpt    5   67882,858 ±  14891,517  ops/s
+KotlinBenchmarkDelegate.arrayAppend                 thrpt    5  449136,145 ± 247045,924  ops/s
+KotlinBenchmarkDelegate.arrayAppendImmutableSingle  thrpt    5     569,386 ±    158,128  ops/s
+KotlinBenchmarkDelegate.arrayAppendSingle           thrpt    5  134677,691 ± 108948,328  ops/s
+KotlinBenchmarkDelegate.filterPositiveNumbers       thrpt    5  144325,537 ±  17962,978  ops/s
+KotlinBenchmarkDelegate.listAppend                  thrpt    5   49273,233 ±   3398,363  ops/s
+KotlinBenchmarkDelegate.listAppendImmutableSingle   thrpt    5     505,353 ±    237,400  ops/s
+KotlinBenchmarkDelegate.listAppendSingle            thrpt    5   51664,250 ±   2917,111  ops/s
+KotlinBenchmarkDelegate.processNumbers              thrpt    5  110837,059 ±   5438,408  ops/s
 ```
 
