@@ -30,12 +30,15 @@ object KotlinBenchmark {
 
     fun listAppend(data: BenchmarkData) {
         val list = data.linkedList
+
         val linkedList = LinkedList(list)
+
         linkedList.addAll(list)
     }
 
     fun arrayAppendSingle(data: BenchmarkData) {
         val list = data.arrayList
+
         val array = ArrayList(list)
 
         list.forEach { array.add(it) }

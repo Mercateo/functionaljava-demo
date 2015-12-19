@@ -10,6 +10,7 @@ public class FunctionalJavaBenchmark {
     @Benchmark
     public static void filterPositiveNumbers(BenchmarkData data) {
         final Array<Integer> array = data.getFunctionalJavaArray();
+
         final Array<Integer> result = array.filter(x -> x > 0);
     }
 

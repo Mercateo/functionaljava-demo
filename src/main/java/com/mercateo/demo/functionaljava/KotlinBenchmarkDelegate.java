@@ -42,7 +42,7 @@ public class KotlinBenchmarkDelegate {
 
     @Benchmark
     public static void arrayAppendImmutableSingle(BenchmarkData data) {
-        KotlinBenchmark.INSTANCE.listAppendImmutableSingle(data);
+        KotlinBenchmark.INSTANCE.arrayAppendImmutableSingle(data);
     }
 
     @Benchmark

@@ -10,7 +10,7 @@ public class Benchmark {
 
         Options opt = new OptionsBuilder()
                 .warmupIterations(5)
-                .measurementIterations(5)
+                .measurementIterations(10)
                 .forks(1)
                 .build();
 

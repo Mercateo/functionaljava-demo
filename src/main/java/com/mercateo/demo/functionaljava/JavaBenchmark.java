@@ -28,31 +28,31 @@ public class JavaBenchmark {
         final LinkedList<Integer> list = data.getLinkedList();
         final LinkedList<Integer> array = new LinkedList<>(list);
 
-        for (Integer integer : list) {
-            array.add(integer);
-        }
+        list.forEach(integer -> array.add(integer));
     }
 
     @Benchmark
     public static void listAppend(BenchmarkData data) {
         final LinkedList<Integer> list = data.getLinkedList();
+
         final List<Integer> linkedList = new LinkedList<>(list);
+
         linkedList.addAll(list);
     }
 
     @Benchmark
     public static void arrayAppendSingle(BenchmarkData data) {
         final ArrayList<Integer> list = data.getArrayList();
+
         final ArrayList<Integer> array = new ArrayList<>(list);
 
-        for (Integer integer : list) {
-            array.add(integer);
-        }
+        list.forEach( integer -> array.add(integer));
     }
 
     @Benchmark
     public static void arrayAppend(BenchmarkData data) {
         final ArrayList<Integer> list = data.getArrayList();
+
         final ArrayList<Integer> array = new ArrayList<>(list);
         array.addAll(list);
     }
