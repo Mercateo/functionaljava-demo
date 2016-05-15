@@ -1,10 +1,12 @@
 package com.mercateo.demo.functionaljava;
 
-import fj.data.TreeMap;
 import javaslang.collection.Array;
 import javaslang.collection.HashMap;
 import javaslang.collection.List;
+import javaslang.control.Option;
 import org.openjdk.jmh.annotations.Benchmark;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 @SuppressWarnings("unused")
 public class JavaSlangBenchmark {
@@ -58,6 +60,15 @@ public class JavaSlangBenchmark {
         HashMap<String, Integer> map = data.getJavaSlangMap();
         for (Integer integer : array) {
             map = map.put(integer.toString(), integer);
+        }
+    }
+
+    @Benchmark
+    public static void mapGet(BenchmarkData data) {
+        HashMap<String, Integer> map = data.getJavaSlangInitializedMap();
+
+        for (String key : map.keySet()) {
+            Option<Integer> integer = map.get(key);
         }
     }
 }

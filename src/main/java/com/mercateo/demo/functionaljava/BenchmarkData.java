@@ -17,12 +17,15 @@ public class BenchmarkData {
     private final ArrayList<Integer> arrayList;
     private final javaslang.collection.List<Integer> javaSlangList;
     private final javaslang.collection.HashMap<String, Integer> javaSlangMap;
+    private final javaslang.collection.HashMap<String, Integer> javaSlangInitializedMap;
     private final fj.data.List<Integer> functionalJavaList;
     private final fj.data.HashMap<String, Integer> functionalJavaHashMap;
     private final fj.data.TreeMap<String, Integer> functionalJavaTreeMap;
     private final LinkedList<Integer> linkedList;
     private final HashMap<String, Integer> hashMap;
+    private final HashMap<String, Integer> initializedHashMap;
     private final ConcurrentHashMap<String, Integer> concurrentHashMap;
+    private final ConcurrentHashMap<String, Integer> initializedConcurrentHashMap;
 
 
     public BenchmarkData() {
@@ -42,7 +45,12 @@ public class BenchmarkData {
         arrayList = new ArrayList<>(dataList);
         linkedList = new LinkedList<>(dataList);
         hashMap = new HashMap<>();
+        initializedHashMap = new HashMap<>();
+        for (Integer integer: data) {
+            initializedHashMap.put(integer.toString(), integer);
+        }
         concurrentHashMap = new ConcurrentHashMap<>();
+        initializedConcurrentHashMap = new ConcurrentHashMap<>(initializedHashMap);
 
         functionalJavaArray = fj.data.Array.array(data);
         functionalJavaList = fj.data.List.list(data);
@@ -52,6 +60,7 @@ public class BenchmarkData {
         javaSlangArray = javaslang.collection.Array.of(data);
         javaSlangList = javaslang.collection.List.of(data);
         javaSlangMap = javaslang.collection.HashMap.empty();
+        javaSlangInitializedMap = javaslang.collection.HashMap.ofAll(initializedHashMap);
     }
 
     public ArrayList<Integer> getArrayList() {
@@ -96,5 +105,17 @@ public class BenchmarkData {
 
     public javaslang.collection.HashMap<String, Integer> getJavaSlangMap() {
         return javaSlangMap;
+    }
+
+    public HashMap<String, Integer> getInitializedHashMap() {
+        return initializedHashMap;
+    }
+
+    public ConcurrentHashMap<String, Integer> getInitializedConcurrentHashMap() {
+        return initializedConcurrentHashMap;
+    }
+
+    public javaslang.collection.HashMap<String, Integer> getJavaSlangInitializedMap() {
+        return javaSlangInitializedMap;
     }
 }

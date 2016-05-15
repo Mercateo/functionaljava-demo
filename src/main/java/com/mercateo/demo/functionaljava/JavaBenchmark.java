@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -76,6 +77,24 @@ public class JavaBenchmark {
         ConcurrentHashMap<String, Integer> map = data.getConcurrentHashMap();
         for (Integer integer: array) {
             map.put(integer.toString(), integer);
+        }
+    }
+
+    @Benchmark
+    public static void mapGet(BenchmarkData data) {
+        HashMap<String, Integer> map = data.getInitializedHashMap();
+
+        for (String key : map.keySet()) {
+            Integer integer = map.get(key);
+        }
+    }
+
+    @Benchmark
+    public static void concurrentMapGet(BenchmarkData data) {
+        ConcurrentHashMap<String, Integer> map = data.getInitializedConcurrentHashMap();
+
+        for (String key : map.keySet()) {
+            Integer integer = map.get(key);
         }
     }
 }
