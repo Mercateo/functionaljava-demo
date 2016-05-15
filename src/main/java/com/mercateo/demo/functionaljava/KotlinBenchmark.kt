@@ -1,5 +1,6 @@
 package com.mercateo.demo.functionaljava
 
+import org.openjdk.jmh.annotations.Benchmark
 import java.util.*
 
 object KotlinBenchmark {
@@ -54,5 +55,23 @@ object KotlinBenchmark {
         val list = data.arrayList
         val array = ArrayList(list)
         array.addAll(list)
+    }
+
+    fun mapPutSingle(data: BenchmarkData) {
+        val array = data.arrayList
+
+        var map = mutableMapOf<String, Int>()
+        for (integer in array) {
+            map.put(integer.toString(), integer)
+        }
+    }
+
+    fun mapPutImmutableSingle(data: BenchmarkData) {
+        val array = data.arrayList
+
+        var map = emptyMap<String, Int>()
+        for (integer in array) {
+            map = map + Pair(integer.toString(), integer)
+        }
     }
 }

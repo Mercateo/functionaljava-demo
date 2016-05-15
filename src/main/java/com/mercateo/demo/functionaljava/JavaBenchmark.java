@@ -3,8 +3,10 @@ package com.mercateo.demo.functionaljava;
 import org.openjdk.jmh.annotations.Benchmark;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
@@ -28,7 +30,7 @@ public class JavaBenchmark {
         final LinkedList<Integer> list = data.getLinkedList();
         final LinkedList<Integer> array = new LinkedList<>(list);
 
-        list.forEach(integer -> array.add(integer));
+        list.forEach(array::add);
     }
 
     @Benchmark
@@ -46,7 +48,7 @@ public class JavaBenchmark {
 
         final ArrayList<Integer> array = new ArrayList<>(list);
 
-        list.forEach( integer -> array.add(integer));
+        list.forEach(array::add);
     }
 
     @Benchmark
@@ -55,5 +57,25 @@ public class JavaBenchmark {
 
         final ArrayList<Integer> array = new ArrayList<>(list);
         array.addAll(list);
+    }
+
+    @Benchmark
+    public static void mapPutSingle(BenchmarkData data) {
+        List<Integer> array = data.getArrayList();
+
+        HashMap<String, Integer> map = data.getHashMap();
+        for (Integer integer: array) {
+            map.put(integer.toString(), integer);
+        }
+    }
+
+    @Benchmark
+    public static void concurrentMapPutSingle(BenchmarkData data) {
+        List<Integer> array = data.getArrayList();
+
+        ConcurrentHashMap<String, Integer> map = data.getConcurrentHashMap();
+        for (Integer integer: array) {
+            map.put(integer.toString(), integer);
+        }
     }
 }

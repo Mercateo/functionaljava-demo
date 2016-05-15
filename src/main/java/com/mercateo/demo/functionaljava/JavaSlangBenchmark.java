@@ -1,6 +1,8 @@
 package com.mercateo.demo.functionaljava;
 
+import fj.data.TreeMap;
 import javaslang.collection.Array;
+import javaslang.collection.HashMap;
 import javaslang.collection.List;
 import org.openjdk.jmh.annotations.Benchmark;
 
@@ -47,5 +49,15 @@ public class JavaSlangBenchmark {
         final Array<Integer> array = data.getJavaSlangArray();
 
         final Array<Integer> result = array.appendAll(array);
+    }
+
+    @Benchmark
+    public static void mapPutImmutableSingle(BenchmarkData data) {
+        final Array<Integer> array = data.getJavaSlangArray();
+
+        HashMap<String, Integer> map = data.getJavaSlangMap();
+        for (Integer integer : array) {
+            map = map.put(integer.toString(), integer);
+        }
     }
 }

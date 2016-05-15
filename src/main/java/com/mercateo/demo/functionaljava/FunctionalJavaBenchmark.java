@@ -1,7 +1,9 @@
 package com.mercateo.demo.functionaljava;
 
 import fj.data.Array;
+import fj.data.HashMap;
 import fj.data.List;
+import fj.data.TreeMap;
 import org.openjdk.jmh.annotations.Benchmark;
 
 @SuppressWarnings("unused")
@@ -51,4 +53,23 @@ public class FunctionalJavaBenchmark {
         final Array<Integer> result = array.append(array);
     }
 
+    @Benchmark
+    public static void mapPutSingle(BenchmarkData data) {
+        final Array<Integer> array = data.getFunctionalJavaArray();
+
+        final HashMap<String, Integer> map = data.getFunctionalJavaHashMap();
+        for (Integer integer : array) {
+            map.set(integer.toString(), integer);
+        }
+    }
+
+    @Benchmark
+    public static void mapPutImmutableSingle(BenchmarkData data) {
+        final Array<Integer> array = data.getFunctionalJavaArray();
+
+        TreeMap<String, Integer> map = data.getFunctionalJavaTreeMap();
+        for (Integer integer : array) {
+            map = map.set(integer.toString(), integer);
+        }
+    }
 }

@@ -49,4 +49,14 @@ public class KotlinBenchmarkDelegate {
     public static void arrayAppend(BenchmarkData data) {
         KotlinBenchmark.INSTANCE.arrayAppend(data);
     }
+
+    @Benchmark
+    public static void mapPutSingle(BenchmarkData data) {
+        KotlinBenchmark.INSTANCE.mapPutSingle(data);
+    }
+
+    @Benchmark
+    public static void mapPutImmutableSingle(BenchmarkData data) {
+        KotlinBenchmark.INSTANCE.mapPutImmutableSingle(data);
+    }
 }
