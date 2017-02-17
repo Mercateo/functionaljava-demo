@@ -1,6 +1,5 @@
 package com.mercateo.demo.functionaljava
 
-import org.openjdk.jmh.annotations.Benchmark
 import java.util.*
 
 object KotlinBenchmark {

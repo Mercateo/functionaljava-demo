@@ -10,23 +10,23 @@ This project should be a playground for the evaluation of functional extensions 
 
 | Method                     | Java | FunctionalJava | JavaSlang | Kotlin |
 | -------------------------- | ---- | -------------- | --------- | ------ |
-| arrayAppend                | 1.0  | 2.4            | 0.2       | 1.0    |
-| arrayAppendSingle          | 1.0  | --             | --        | 1.3    |
-| arrayAppendImmutableSingle | --   | 1.0            | 1.0       | 1.00   |
-| listAppend                 | 1.0  | 2.1            | 0.8       | 1.1    |
-| listAppendSingle           | 1.0  | --             | --        | 1.3    |
-| listAppendImmutableSingle  | --   | 1.0            | 0.1       | 6.7    |
-| filterPositiveNumbers      | 1.0  | 0.5            | 1.4       | 1.1    |
-| processNumbers             | 1.0  | 0.9            | 0.75      | 1.2   |
+| arrayAppend                | 1.0  | 2.0            | 0.1       | 1.0    |
+| arrayAppendSingle          | 1.0  | --             | --        | 1.1    |
+| arrayAppendImmutableSingle | --   | 1.0            | 1.0       | 1.03   |
+| listAppend                 | 1.0  | 1.8            | 1.6       | 1.0    |
+| listAppendSingle           | 1.0  | --             | --        | 1.1    |
+| listAppendImmutableSingle  | --   | 1.0            | 0.3       | 5.5    |
+| filterPositiveNumbers      | 1.0  | 1.0            | 1.1       | 1.1    |
+| processNumbers             | 1.0  | 0.9            | 0.72      | 1.1    |
 
 
 Versions:
 
 |           |           |
 | --------- | --------- |
-| Java      | 1.8u72    |
-| FJ        | 4.5       |
-| JavaSlang | 2.0.0-RC4 |
-| Kotlin    | 1.0.1     |
+| Java      | 1.8u121   |
+| FJ        | 4.6       |
+| JavaSlang | 2.0.5     |
+| Kotlin    | 1.0.6     |
 
 

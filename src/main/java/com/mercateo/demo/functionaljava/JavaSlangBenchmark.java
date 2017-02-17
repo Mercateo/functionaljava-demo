@@ -47,6 +47,15 @@ public class JavaSlangBenchmark {
     }
 
     @Benchmark
+    public static void removeAppendImmutableSingle(BenchmarkData data) {
+        Array<Integer> array = data.getJavaSlangArray();
+
+        for (Integer integer : array) {
+            array = array.remove(integer);
+        }
+    }
+
+    @Benchmark
     public static void arrayAppend(BenchmarkData data) {
         final Array<Integer> array = data.getJavaSlangArray();
 

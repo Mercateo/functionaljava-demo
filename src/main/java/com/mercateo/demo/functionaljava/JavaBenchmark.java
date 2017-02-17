@@ -61,6 +61,15 @@ public class JavaBenchmark {
     }
 
     @Benchmark
+    public static void removeAppendImmutableSingle(BenchmarkData data) {
+        List<Integer> list = data.getArrayList();
+
+        for (Integer integer : list) {
+            list.remove(integer);
+        }
+    }
+
+    @Benchmark
     public static void mapPutSingle(BenchmarkData data) {
         List<Integer> array = data.getArrayList();
 
