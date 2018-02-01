@@ -1,7 +1,7 @@
 package com.mercateo.demo.functionaljava;
 
 import fj.function.Integers;
-import javaslang.collection.Array;
+import io.vavr.collection.Array;
 import org.junit.Test;
 
 import java.util.Arrays;

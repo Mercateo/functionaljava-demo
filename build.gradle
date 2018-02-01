@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = "1.0.6"
+    ext.kotlin_version = "1.2.20"
     repositories {
         mavenCentral()
     }
@@ -22,7 +22,7 @@ dependencies {
     compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.+'
     compile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.+'
     compile group: 'org.functionaljava', name: 'functionaljava-java8', version: '4.+'
-    compile group: 'io.javaslang', name: 'javaslang-pure', version: '2.0.+'
+    compile group: 'io.vavr', name: 'vavr', version: '0.9.+'
     testCompile group: 'junit', name: 'junit', version: '4.+'
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.+'
 }

@@ -1,7 +1,7 @@
 package com.mercateo.demo.functionaljava;
 
-import javaslang.Function1;
-import javaslang.control.Option;
+import io.vavr.Function1;
+import io.vavr.control.Option;
 import org.junit.Test;
 
 import java.util.function.Function;

@@ -1,8 +1,8 @@
 package com.mercateo.demo.functionaljava;
 
-import javaslang.Function1;
-import javaslang.Function2;
-import javaslang.Function3;
+import io.vavr.Function1;
+import io.vavr.Function2;
+import io.vavr.Function3;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

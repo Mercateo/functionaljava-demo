@@ -1,6 +1,6 @@
 package com.mercateo.demo.functionaljava;
 
-import javaslang.control.Option;
+import io.vavr.control.Option;
 
 import java.util.Optional;
 

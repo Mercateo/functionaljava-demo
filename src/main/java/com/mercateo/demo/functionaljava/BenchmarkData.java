@@ -13,11 +13,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BenchmarkData {
 
     private final fj.data.Array<Integer> functionalJavaArray;
-    private final javaslang.collection.Array<Integer> javaSlangArray;
+    private final io.vavr.collection.Array<Integer> javaSlangArray;
     private final ArrayList<Integer> arrayList;
-    private final javaslang.collection.List<Integer> javaSlangList;
-    private final javaslang.collection.HashMap<String, Integer> javaSlangMap;
-    private final javaslang.collection.HashMap<String, Integer> javaSlangInitializedMap;
+    private final io.vavr.collection.List<Integer> javaSlangList;
+    private final io.vavr.collection.HashMap<String, Integer> javaSlangMap;
+    private final io.vavr.collection.HashMap<String, Integer> javaSlangInitializedMap;
     private final fj.data.List<Integer> functionalJavaList;
     private final fj.data.HashMap<String, Integer> functionalJavaHashMap;
     private final fj.data.TreeMap<String, Integer> functionalJavaTreeMap;
@@ -57,10 +57,10 @@ public class BenchmarkData {
         functionalJavaHashMap = fj.data.HashMap.hashMap();
         functionalJavaTreeMap = fj.data.TreeMap.treeMap(Ord.<String>hashOrd());
 
-        javaSlangArray = javaslang.collection.Array.of(data);
-        javaSlangList = javaslang.collection.List.of(data);
-        javaSlangMap = javaslang.collection.HashMap.empty();
-        javaSlangInitializedMap = javaslang.collection.HashMap.ofAll(initializedHashMap);
+        javaSlangArray = io.vavr.collection.Array.of(data);
+        javaSlangList = io.vavr.collection.List.of(data);
+        javaSlangMap = io.vavr.collection.HashMap.empty();
+        javaSlangInitializedMap = io.vavr.collection.HashMap.ofAll(initializedHashMap);
     }
 
     public ArrayList<Integer> getArrayList() {
@@ -95,15 +95,15 @@ public class BenchmarkData {
         return functionalJavaTreeMap;
     }
 
-    public javaslang.collection.Array<Integer> getJavaSlangArray() {
+    public io.vavr.collection.Array<Integer> getJavaSlangArray() {
         return javaSlangArray;
     }
 
-    public javaslang.collection.List<Integer> getJavaSlangList() {
+    public io.vavr.collection.List<Integer> getJavaSlangList() {
         return javaSlangList;
     }
 
-    public javaslang.collection.HashMap<String, Integer> getJavaSlangMap() {
+    public io.vavr.collection.HashMap<String, Integer> getJavaSlangMap() {
         return javaSlangMap;
     }
 
@@ -115,7 +115,7 @@ public class BenchmarkData {
         return initializedConcurrentHashMap;
     }
 
-    public javaslang.collection.HashMap<String, Integer> getJavaSlangInitializedMap() {
+    public io.vavr.collection.HashMap<String, Integer> getJavaSlangInitializedMap() {
         return javaSlangInitializedMap;
     }
 }

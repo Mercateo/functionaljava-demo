@@ -1,9 +1,9 @@
 package com.mercateo.demo.functionaljava;
 
-import javaslang.collection.Array;
-import javaslang.collection.HashMap;
-import javaslang.collection.List;
-import javaslang.control.Option;
+import io.vavr.collection.Array;
+import io.vavr.collection.HashMap;
+import io.vavr.collection.List;
+import io.vavr.control.Option;
 import org.openjdk.jmh.annotations.Benchmark;
 
 import java.util.concurrent.ConcurrentHashMap;

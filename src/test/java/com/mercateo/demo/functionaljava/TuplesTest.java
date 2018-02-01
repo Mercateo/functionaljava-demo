@@ -1,7 +1,7 @@
 package com.mercateo.demo.functionaljava;
 
-import javaslang.Tuple;
-import javaslang.Tuple4;
+import io.vavr.Tuple;
+import io.vavr.Tuple4;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
